@@ -1,0 +1,253 @@
+write.table(data, "~/Downloads/Microdatos/precipitacionytemper2010-2014.txt", sep=",")
+write.table(data, "~/Downloads/Microdatos/precipitacionytemper2010-2014.csv", sep=",")
+d=read.table("~/Downloads/Microdatos/precipitacionytemper2010-2014.csv")
+d=read.csv("~/Downloads/Microdatos/precipitacionytemper2010-2014.csv")
+View(d)
+subset(d, DEPTO)
+d[2]
+unique(d[1])
+unique(d[2])
+length(unique(d[2]))
+unique(d[2])
+length(unique(d[2]))
+length(d)
+dim(d)
+dim(unique(d))
+dim(unique(d[2]))
+sort(unique(d[2]))
+deptos=unique(d[2])
+deptos
+deptos[1]
+deptos[0]
+deptos[2]
+typeof(deptos)
+class(deptos)
+deptos[order(deptos,DEPTO)]
+deptos[order(deptos)]
+deptos[order(deptos[1])]
+order(deptos)
+deptos[order(deptos)]
+example(order)
+deptos[order(deptos),]
+deptos[order(deptos)]
+t(deptos[order(deptos),])
+dim(deptos[order(deptos)])
+dim(deptos[order(deptos)],)
+dim(deptos[order(deptos),])
+deptos
+class(deptos)
+deptos[order(deptos[,1]),]
+deptos[order(deptos[,1])]
+deptos[with(deptos,order(deptos)),]
+deptos[order(deptos[,1])]
+deptos[order(deptos[,1]),]
+class(deptos[order(deptos[,1]),])
+as.character(deptos[order(deptos[,1]),])
+class(as.character(deptos[order(deptos[,1]),]))
+library(plyr)
+install.packages("plyr", repos='http://cran.r-project.org')
+library(plyr)
+deptos[order(deptos$DEPTO),]
+View(deptos)
+View(deptos[order(deptos$DEPTO),])
+which(apply(df, 2, function(d) any(grepl("GUAVIARE", d))))
+which(apply(d, 2, function(x) any(grepl("a", x))))
+grep("GUAVIARE",d)
+grep("GUAVINIA",d)
+grep("GUAVINIA",d$DEPTO)
+grep("GUAINIA",d)
+grep("GUAINIA",d$DEPTO)
+grep("GUAVIARE",d$DEPTO)
+names(d)
+subset(d,DEPTO=="GUAINIA")
+guainia=subset(d, DEPTO=="GUAINIA")
+unique(guainia$ANYO)
+unique(guainia$MPIO)
+d70=read.dta("~/Downloads/Microdatos/precipitacionytemper1970-2011.dta")
+d12=read.dta("~/Downloads/Microdatos/precipitacionytemper2012.dta")
+d14=read.dta("~/Downloads/Microdatos/precipitacionytemper2010-2014.dta")
+lls
+ls
+d70=read.dta("~/Documents/Trabajos/IDEAMClima/Microdatos/precipitacionytemper1970-2011.dta")
+library(foreign)
+d70=read.dta("~/Documents/Trabajos/IDEAMClima/Microdatos/precipitacionytemper1970-2011.dta")
+d10=read.dta("~/Documents/Trabajos/IDEAMClima/Microdatos/precipitacionytemper2010-2014.dta")
+d12=read.dta("~/Documents/Trabajos/IDEAMClima/Microdatos/precipitacionytemper2012.dta")
+dD=read.dta("~/Documents/Trabajos/IDEAMClima/Microdatos/precipitacionytemperdiarias.dta")
+unique(d70$DEPTO)
+unique(d70$AÑO)
+names(d70)
+write.csv(d70, file="~/Documents/Trabajos/IDEAMClima/Microdatos/precipitacionytemper1970-2011.csv", row.names=FALSE, na="")
+write.csv(d10, file="~/Documents/Trabajos/IDEAMClima/Microdatos/precipitacionytemper2010-2014.csv", row.names=FALSE, na="")
+write.csv(d12, file="~/Documents/Trabajos/IDEAMClima/Microdatos/precipitacionytemper2012.csv", row.names=FALSE, na="")
+write.csv(dD, file="~/Documents/Trabajos/IDEAMClima/Microdatos/precipitacionytemperdiarias.csv", row.names=FALSE, na="")
+ls()
+rm(list=ls())
+ls()
+source("/Users/Palo/Documents/Trabajos/IDEAMClima/Scipts/LoadDB.r")
+source("/Users/Palo/Documents/Trabajos/IDEAMClima/Scipts/LoadDBFromDta.r")
+names(d70$ANYO)
+unique(d70$ANYO)
+order(unique(d70$ANYO))
+yrs=unique(d70$ANYO)
+yrs
+yrs[order(yrs),]
+class(yrs)
+sort(yrs)
+rm(yrs)
+View(unique(d70$ANYO))
+Sys.getlocale()
+Sys.setlocale(category="LC_ALL", locale="C")
+View(unique(d70$ANYO))
+View(unique(d70[1]))
+View(subset(d70, d70$DEPTO=="GUAVIARE"))
+View(subset(d70, d70$DEPTO=="GUAVIARE", d70$ANYO>2005))
+View(subset(d70, d70$DEPTO=="GUAVIARE" & d70$ANYO>2005))
+unique(d70$VARIABLE)
+precipGuaviare=subset(d70$DEPTO=="GUAVIARE" & d70$ANYO>2005 & d70$VARIABLE="VALORES TOTALES MENSUALES DE PRECIPITACION (mms)")
+precipGuaviare=subset(d70$DEPTO=="GUAVIARE" & d70$ANYO>2005 & d70$VARIABLE=="VALORES TOTALES MENSUALES DE PRECIPITACION (mms)")
+precipGuaviare=subset(d70, d70$DEPTO=="GUAVIARE" & d70$ANYO>2005 & d70$VARIABLE=="VALORES TOTALES MENSUALES DE PRECIPITACION (mms)")
+View(precipGuaviare)
+precipGuaviare[1]
+precipGuaviare=precipGuaviare[order(precipGuaviare$ANYO)]
+View(precipGuaviare)
+unique(precipGuaviare$MPIO)
+A=read.csv("~/Documents/Trabajos/Wadjet/ModeloAntioquia - Sheet1.csv")
+View(A)
+A2014=subset(A, A$ANYO==2014)
+plot(subset(A, A$ANYO==2014)$SEMANA,subset(A, A$ANYO==2014)$CASOS)
+plot(subset(A, A$ANYO==2014)$SEMANA,subset(A, A$ANYO==2014)$CASOS, l)
+plot(subset(A, A$ANYO==2014)$SEMANA,subset(A, A$ANYO==2014)$CASOS, type="l")
+plot(subset(A, A$ANYO==2013)$SEMANA,subset(A, A$ANYO==2013)$CASOS, type="l")
+plot(subset(A, A$ANYO==2014)$SEMANA,subset(A, A$ANYO==2014)$CASOS, type="n")
+line(subset(A, A$ANYO==2014)$SEMANA,subset(A, A$ANYO==2014)$CASOS)
+lines(subset(A, A$ANYO==2014)$SEMANA,subset(A, A$ANYO==2014)$CASOS)
+lines(subset(A, A$ANYO==2013)$SEMANA,subset(A, A$ANYO==2013)$CASOS)
+A=read.csv("~/Documents/Trabajos/Wadjet/ModeloAntioquia - Sheet1.csv")
+View(A)
+plot(x,y,type"n")
+plot(x,y,type="n")
+plot("Mes","Casos",type="n")
+help("~")
+help(".")
+??.
+AMes=aggregate(.~ A$MES, data =A, sum)
+View(AMes)
+AMes=aggregate(.~ A$MES, data =subset(A, A$ANYO==2014), sum)
+A14=subset(A,A$ANYO==2014)
+View(A14)
+A14=aggregate(.~ A14$MES, data =A14, sum)
+View(A14)
+A14=subset(A,A$ANYO==2014)
+View(A14)
+ls()
+rm(list=ls())
+ls()
+source("/Users/Palo/Documents/Trabajos/Wadjet/IncidenciaMensual.R")
+ls()
+As
+A
+As=split(A,A[,"ANYO"])
+View(As)
+As
+As=lapply(As, function(x) aggregate(CASOS ~ MES, x, sum))
+As
+As$2014
+As[1]
+As[8]
+names(As[8])
+As=lapply(As, function(x) lines(MES, CASOS))
+dim(as[8])
+class(As)
+class(As[8])
+As[8]
+As[[8]]
+As=lapply(As, function(x) x)
+As=lapply(As, function(x) print(x))
+As=lapply(As, function(x) print(x$MES))
+As=lapply(As, function(x) lines(x$MES, x$CASOS))
+source("/Users/Palo/Documents/Trabajos/Wadjet/IncidenciaMensual.R")
+As
+rm(l=ls())
+rm(list=ls())
+ls()
+source("/Users/Palo/Documents/Trabajos/Wadjet/IncidenciaMensual.R")
+As
+source("/Users/Palo/Documents/Trabajos/Wadjet/IncidenciaMensual.R")
+As
+seq(As)
+source("/Users/Palo/Documents/Trabajos/Wadjet/IncidenciaMensual.R")
+As
+class(As)
+names(As)
+source("/Users/Palo/Documents/Trabajos/Wadjet/IncidenciaMensual.R")
+As[[3]]$MES
+source("/Users/Palo/Documents/Trabajos/Wadjet/IncidenciaMensual.R")
+seq(As)
+source("/Users/Palo/Documents/Trabajos/Wadjet/IncidenciaMensual.R")
+As
+As$2014
+As$ANYO
+As
+A=read.csv("~/Documents/Trabajos/Wadjet/ModeloAntioquia.csv");
+A
+As=split(A,A[,"ANYO"])
+As
+As=lapply(As, function(x) aggregate(CASOS ~ MES, x, sum)) #aggregate data from weeks into months
+As
+names(As)
+As[1]
+As[[1]]
+As$
+2014
+Class(As)
+class(As)
+type(As)
+typeof(As)
+names(As)
+As$2007
+As$"2007"
+As$"2013"
+As$"2012"
+As$"2011"
+source("/Users/Palo/Documents/Trabajos/Wadjet/IncidenciaMensual.R")
+source("/Users/Palo/Documents/Trabajos/IDEAMClima/Scripts/LoadDB.R")
+rm(list=ls()); #clear workspace
+ls()
+source("/Users/Palo/Documents/Trabajos/Wadjet/Scripts/Integration/Antioquia2013.R")
+getwd()
+setwd(/Users/Palo/Documents/Trabajos/Wadjet)
+setwd(Users/Palo/Documents/Trabajos/Wadjet)
+setwd(Documents/Trabajos/Wadjet)
+setwd(~/Users/Palo/Documents/Trabajos/Wadjet)
+setwd("Users/Palo/Documents/Trabajos/Wadjet")
+getwd()
+source("/Users/Palo/Documents/Trabajos/Wadjet/Scripts/Epidemiologia/IncidenciaMensual.R")
+install.packages("rJava")
+library(Rserve)
+setwd("/Users/Palo/Documents/Eclipse/Wadjet/RFiles/Wadjet") #This has to be set to Wadjet directory
+Clim=read.csv("Data/IDEAMClima/Clim.csv", stringsAsFactors=F);
+Epi=read.csv("Data/Epidemiologia/AccidentesOfidicos.csv");#
+source("Scripts/Epidemiologia/BuildEpi.r")# load db
+View(Epi)
+Epi=read.csv("Data/Epidemiologia/AccidentesOfidicos.csv");#
+source("Scripts/Epidemiologia/BuildEpi.r")# load db
+View(Epi)
+Epi
+View(Epi$VICHADA)
+Epi=lapply(Epi, as.numeric
+)
+Epi
+as.data.frame(Epi)
+lapply(Epi, length)
+Epi$"PROCEDENCIA DESCONOCIDA"
+Epi$"PROCEDENCIA DESCONOCIDA"=NULL
+lapply(Epi, length)
+as.data.frame(Epi)
+t(as.data.frame(Epi))
+write.xlsx(t(as.data.frame(Epi)),"Data/Output/RawDataEpi.xlsx");
+library(xlsx);
+write.xlsx(t(as.data.frame(Epi)),"Data/Output/RawDataEpi.xlsx");
+Epi=read.csv("Data/Epidemiologia/AccidentesOfidicos.csv");#
+source("Scripts/Epidemiologia/BuildEpi.r")# load db
+Epi
